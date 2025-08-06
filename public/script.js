@@ -1,4 +1,4 @@
-let map = L.map('map').setView([50, -100], 3); // adjust as needed
+let map = L.map('map').setView([0,0], 2); // adjust as needed
 
 let currentLayer;
 
@@ -11,13 +11,18 @@ function addTileLayer(month) {
     attribution: `Month: ${month}`,
     maxZoom: 6,
     minZoom: 0,
+	noWrap: true,
     tms: false,
     errorTileUrl: '',
   }).addTo(map);
 }
 
+map.fitBounds([
+  [40, -180], 
+  [90, 180]   
+]);
 // Init with January
-addTileLayer(1);
+addTileLayer(7);
 
 // Update layer on dropdown change
 document.getElementById('monthSelector').addEventListener('change', (e) => {
