@@ -7,7 +7,7 @@ function addTileLayer(month) {
     map.removeLayer(currentLayer);
   }
 
-  currentLayer = L.tileLayer(`/public/${month}/{z}/{x}/{y}.png`, {
+  currentLayer = L.tileLayer(`/${month}/{z}/{x}/{y}.png`, {
     attribution: `Month: ${month}`,
     maxZoom: 6,
     minZoom: 0,
