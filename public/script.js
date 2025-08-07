@@ -7,7 +7,10 @@ function addTileLayer(month) {
     map.removeLayer(currentLayer);
   }
 
-  currentLayer = L.tileLayer(`/${month}/{z}/{x}/{y}.png`, {
+  currentLayer = L.tileLayer(
+    //`/${month}/{z}/{x}/{y}.png`, 
+   `https://cdn.jsdelivr.net/gh/grantfalvo/ECM_website_test_1@main/public/${month}/{z}/{x}/{y}.png`, 
+    {
     attribution: `Month: ${month}`,
     maxZoom: 6,
     minZoom: 0,
@@ -19,7 +22,7 @@ function addTileLayer(month) {
 
 map.fitBounds([
   [40, -180], 
-  [90, 180]   
+  [85, 180]   
 ]);
 // Init with January
 addTileLayer(7);
